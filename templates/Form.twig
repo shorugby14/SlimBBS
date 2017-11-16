@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+  <html lang="ja">
+  <head>
+  <meta charset="UTF-8">
+  <title>掲示板</title>
+  </head>
+  <body>
+    <h1>掲示板</h1>
+    <section>
+      <h2>新規投稿</h2>
+      <form action="PostMsg" method="post">
+	  {% if name == true %}
+	  名前: {{name}}<br>
+	  {% else  %}
+	  名前: <input type="text" name="name" value=""><br>
+	  {% endif %}
+	  本文: <br>
+                <textarea name="msg" cols=40 rows=4></textarea><br>
+          <input type="submit" value="投稿">
+      </form>
+  </section>
+  </body>
+</html>

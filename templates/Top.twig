@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+  <html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+  <title>掲示板</title>
+  </head>
+  <body>
+    {% if name == true %}
+    <Div Align="right">
+      ログイン中アカウント:{{name}}さん<br>
+      <input type="button" onclick="location.href='PostHistory'"value="投稿履歴"><br>
+      <input type="button" onclick="location.href='Logout'"value="ログアウト"><br>
+    </Div>
+    {% else %}
+    <Div Align="right"><input type="button" onclick="location.href='Login'"value="ログイン"><br></Div>
+    {% endif %}
+    <h1><center>掲示板</center></h1>
+    <section>
+        <input type="button" onclick="location.href='Form'"value="投稿する">
+    </section>
+    <br>
+    {% for row in board %}
+        投稿者:{{row['name']}}<br>
+        本文:<br>{{row['message']}}<br>
+        投稿時間:{{row['time']}}<br>
+        <form action="Good" method="post">
+          <input type="hidden" name="id" value="{{row['id']}}">
+          <input type="submit" value="いいね!!!!">
+	</form>
+	<form action="ViewGood" method="post">
+	  いいね数:{{count}}
+          <input type="hidden" name="id" value="{{row['id']}}">
+          <input type="submit" value="いいね!!!!した人を表示">
+	</form>
+        <br><br>
+    {% endfor %}
+  </body>
+</html>

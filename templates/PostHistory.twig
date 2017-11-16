@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+  <html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+  <title>投稿履歴</title>
+  </head>
+  <body>
+    <h1><center>{{name}}さんの投稿履歴</center></h1>
+    <section>
+         <input type="button" onclick="location.href='Top'"value="Topへ">
+    </section>
+    {% for row in board %}
+        投稿者:{{row['name']}}<br>
+        本文:<br>{{row['message']}}<br>
+        投稿時間:{{row['time']}}<br><br>
+    {% endfor  %}
+  </body>
+</html>

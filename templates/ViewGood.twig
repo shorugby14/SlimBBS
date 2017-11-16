@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+  <html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+  <title>いいね!!!!した人</title>
+  </head>
+  <body>
+    <h1><center>いいねした人</center></h1>
+    <section>
+         <input type="button" onclick="location.href='Top'"value="Topへ">
+    </section>
+    {% for row in good %}
+       {{row['name']}}
+    {% endfor  %}
+  </body>
+</html>
